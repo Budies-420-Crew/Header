@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.banner-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-images {
+    display: flex;
+    width: 500%;
+    transition: transform 1s ease-in-out;
+}
+
+.banner-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-container:hover .banner-images {
+    animation: slide 15s infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(-200%);
+    }
+    60% {
+        transform: translateX(-300%);
+    }
+    80% {
+        transform: translateX(-400%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
