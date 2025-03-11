@@ -1,0 +1,114 @@
+
+Conversation opened. 1 read message.
+
+Skip to content
+Using Gmail with screen readers
+1 of 8,364
+setup
+Inbox
+Flapjack I <mathew.ashanahan@gmail.com>
+	
+3:16 AM (27 minutes ago)
+	
+to me
+index: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Banner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner-container">
+        <div class="banner-images">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+style: * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.banner-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-images {
+    display: flex;
+    width: 500%;
+    transition: transform 1s ease-in-out;
+}
+
+.banner-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-container:hover .banner-images {
+    animation: slide 15s infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(-200%);
+    }
+    60% {
+        transform: translateX(-300%);
+    }
+    80% {
+        transform: translateX(-400%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+Script:// Optional JavaScript for additional controls or interactivity
+// For now, this code allows you to control the image transitions or add a pause on hover
+
+document.querySelector('.banner-container').addEventListener('mouseenter', function () {
+    document.querySelector('.banner-images').style.animationPlayState = 'paused';
+});
+
+document.querySelector('.banner-container').addEventListener('mouseleave', function () {
+    document.querySelector('.banner-images').style.animationPlayState = 'running';
+});
+
+    HTML: The banner-container holds the scrolling images. The images themselves are inside the banner-images container. You can replace image1.jpg, image2.jpg, etc., with the actual paths to your images.
+    CSS:
+        We use flexbox to arrange the images horizontally and make the container wider (500% of the screen width since we have 5 images).
+        The @keyframes animation (slide) moves the images to create the scrolling effect. It moves through each image by translating the images horizontally.
+        The hover effect on the .banner-container pauses the animation when the user hovers over the banner.
+    JavaScript: The script pauses the animation on hover and resumes it when the hover is removed.
+
+This code will create a scrolling image banner that cycles through the images automatically and pauses when you hover over it. You can customize the images, timing, and effects as needed.
+
+
+	
